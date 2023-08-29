@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+.mat-progress-spinner circle, .mat-spinner circle{
+    stroke: white !important
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-radio-outer-circle{
+    border: 1px solid darkgray;
+}
+.mat-dialog-container{
+    background-color: hotpink;
+    box-shadow: 2px 2px 2px solid white 2px 2px 2px solid aqua 2px 2px 2px solid antiquewhite;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+    border-color: hotpink;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple{
+    background-color: hotpink;
+}
+.mat-dialog-container:hover{
+    box-shadow: 4px 4px 5px white 3px 5px 7px greenyellow 4px 4px 7px white;
+}

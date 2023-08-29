@@ -1,0 +1,12 @@
+<div class="theme-body">
+    <div class="theme-box">
+    <div><h3>You can select from the themes below</h3> 
+    <h4>Or you can suggest us any other theme</h4></div>
+    <mat-radio-group class="theme-container" (change)="select($event)">
+        <mat-radio-button id="1" value="#e71989" class="theme" style="background-color: red;" mat-dialog-close (click)="change()"></mat-radio-button>
+        <mat-radio-button id="2" value="linear-gradient(30.38deg,#4A1885 7.24%,#D026F9 52.33%,#FF001B 92.01%);" class="theme" style="background-color: blue;" mat-dialog-close (click)="change()"></mat-radio-button>
+        <mat-radio-button id="3" value="#088F8F" class="theme" style="background-color:green ;" mat-dialog-close (click)="change()"></mat-radio-button>
+        <mat-radio-button id="4" value="black" class="theme" style="background-color: black;" mat-dialog-close (click)="change()"></mat-radio-button>
+      </mat-radio-group>
+</div>
+</div>

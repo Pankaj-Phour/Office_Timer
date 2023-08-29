@@ -1,0 +1,16 @@
+<div class="body">
+  <div class="container">
+    <form  #form [formGroup]="Form" (ngSubmit)="formValue(Form.value)" method="post">
+     <div class="formgroup">
+      <input #input1 formControlName="Name" placeholder="Enter Your name" type="text">
+      <!-- <p #nameError></p> -->
+      <input #input2 formControlName="date" placeholder="Enter Date" type="date">
+      <!-- <p #dateError></p> -->
+      <input #input3 formControlName="Time" min="08:00" max="09:30" placeholder="Enter Time" type="time">
+      <!-- <p #TimeError></p> -->
+      <button #button [disabled]="Form.invalid || disable === true" (click)="formValue(Form.value)">Update</button>
+    </div>
+    </form>
+
+  </div>
+</div>

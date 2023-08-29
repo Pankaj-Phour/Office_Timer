@@ -1,0 +1,12 @@
+<div style="background-color: white;height:25vh;width:500px;display: flex;justify-content: center;align-items: center;">
+    <div style="">
+        <!-- <form > -->
+            <p style="color:black;">Please select what you want to Update</p>
+            <mat-radio-group class="radio" (change)="group($event)">
+                <mat-radio-button id="1" value="1">Details</mat-radio-button>
+                <mat-radio-button id="2" value="2" >Image</mat-radio-button>
+              </mat-radio-group>
+            <button (click)="submit($event)" class="dialogbtn" mat-dialog-close>Submit</button>
+        <!-- </form> -->
+    </div>
+</div>
