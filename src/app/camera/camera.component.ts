@@ -33,7 +33,7 @@ export class CameraComponent implements OnInit, OnDestroy {
     this.load()
     this.picture = false;
     this.data = JSON.parse(localStorage.getItem('data'));
-    console.log(this.data);
+    // console.log(this.data);
   }
   load() {
     this.btn = false;

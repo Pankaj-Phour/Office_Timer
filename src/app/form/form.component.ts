@@ -82,9 +82,9 @@ export class FormComponent implements OnInit {
     if(this.Form.valid) {
       
       if((parseInt(data.Time.replace(regex,''),10) < parseInt(FinalTime.replace(regex,''),10)) && parseInt(data.Time.replace(regex,''),10) > parseInt(this.EarlyTime.replace(regex,''),10) && data.date == this.dateCheck){
-        console.log("Hurray");
+        // console.log("Hurray");
         this.TimeError = false;
-        console.log(data.Time);
+        // console.log(data.Time);
        
       this.dataError = false;
         
@@ -94,25 +94,25 @@ export class FormComponent implements OnInit {
       time1[i] = parseInt(time1[i]);
     }
     let Minutes1 = time1[0]*60 + time1[1];
-  console.log(Minutes1,"Entry");
+  // console.log(Minutes1,"Entry");
     let time2 = [];
     time2 = officeHours.split(':');
     for(let i = 0; i< time2.length;i++){
       time2[i] = parseInt(time2[i]);
     }
     let Minutes2 = time2[0]*60 + time2[1];
-  console.log(Minutes2, "Exit");
+  // console.log(Minutes2, "Exit");
   this.timeStamp = Minutes2 * 60;
   localStorage.setItem('Time',this.timeStamp)
   let value = Minutes1 + Minutes2;
   this.totalTime = value;
   let userTime = this.TimeToMinutes(data.Time);
-  console.log(userTime);
+  // console.log(userTime);
   if(userTime<510){
     userTime = 510
   }
   let officeTime = this.TimeToMinutes(officeHours);
-  console.log(officeTime);
+  // console.log(officeTime);
   this.ExitTime = userTime + officeTime;
     localStorage.setItem('data',JSON.stringify(data));
     localStorage.setItem('theme',JSON.stringify(this.theme));
@@ -128,7 +128,7 @@ export class FormComponent implements OnInit {
     }, 3000);
     }
     if(data.date !== this.dateCheck){
-      console.log('Error');
+      // console.log('Error');
       this.dataError = true;
       setTimeout(() => {
         this.dataError = false
