@@ -1,0 +1,80 @@
+<div #body *ngIf="camera===false && error===false" class="body">
+  <div class="search">
+    <input type="text" placeholder="Search user" [(ngModel)]="search">
+    <div class="image-container" (click)="selector()"> 
+       <img src="/assets/images/theme.jpg" width="40px" height="40px">
+    </div>
+  </div>
+<table #table>
+  <tr>
+    <th #tableheaders>
+      Name
+    </th>
+    <th #tableheaders>
+      Date
+    </th>
+    <th #tableheaders>
+      Entry
+    </th>
+    <th #tableheaders>
+      Exit
+    </th>
+    <th #tableheaders>
+      Identity
+    </th>
+  </tr>
+  <tr *ngFor="let data of data | filter:search;let i=index" #tabledata>
+    <td>
+  {{data.name}}
+    </td>
+    <td>
+  {{data.date}}
+    </td>
+    <td>
+  {{data.time}}
+    </td>
+    <td>
+      {{data.exit}}
+    </td>
+    <td>
+      <img [src]="data.url" height="auto">
+      <div class="btn-box4">
+      <button #update (click)="Update(i)" class="actionimg"><mat-icon>edit</mat-icon></button>
+      <button #update (click)="delete(i)" class="actionimg"><mat-icon>delete</mat-icon></button>
+    </div>
+    </td>
+  </tr>
+</table>
+<!-- <img [src]="image" width="200px" height="200px"> -->
+<div #btncontainer class="button-box1">
+<button (click)="clear()" #btn2 class="action">Clear Data</button>
+<button (click)="home()" #btn class="action">Home Page</button>
+</div>
+</div>
+<div #body2 *ngIf="camera===true && error===false" class="camera">
+<div>
+  <div #container class="container">
+    <video #video autoplay>Video is not supported by browser</video>
+    <img [src]="image" #photo *ngIf="image">
+    <span class="span" #span>Click camera to allow access to camera</span>
+    <button #submit (click)="capture()" class="buttons" style="margin: auto;display: none;" class="btn-pageCamera">Capture</button>
+  </div>
+  <canvas #canvas hidden></canvas>
+  <div class="button-box">
+    <button #button (click)="load()" [disabled]="!btnDisplay" class="buttons"  class="btn-pageCamera">Camera</button>
+    <button #button2 (click)="stop()" [disabled]="btnDisplay" class="buttons" class="btn-pageCamera">Stop</button>
+  <button (click)="Submit()" [disabled]="picture===false" class="buttons" class="btn-pageCamera">Submit</button>
+</div>
+</div>
+
+</div>
+
+<div [hidden]="error===false" style="background-color: #3e013e;height: 100vh;width: 100vw;">
+  <div style="position: absolute;transform:translate(-50%,-50%);top:50%;left:50%;" [hidden]="message === true">
+<mat-spinner [diameter]="80" [color]="white"></mat-spinner>
+
+  <div style="color:white;font-size:22px;text-align: center;">Loading...</div>
+</div>
+<div style="color:white;font-size:22px;text-align: center;" [hidden]="message===false">Api error</div>
+
+</div>

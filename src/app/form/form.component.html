@@ -1,0 +1,36 @@
+<div class="body">
+  <div class="container">
+    <div class="form">
+      <form [formGroup]="Form">
+        <div class="heading">
+          <h2>Fill details to know your timings</h2>
+        </div>
+
+      <div class="formGroup">
+        <label for="name">Name: </label>
+        <input type="text" placeholder="Enter your name" formControlName="Name">
+        <div class="error" *ngIf="Form.get('Name').hasError('required') && submit">Name is required</div>
+      </div>
+      <div class="formGroup">
+        <label for="date">Date: </label>
+        <input type="date" placeholder="Enter Date" formControlName="date">
+        <div class="error" *ngIf="Form.get('date').hasError('required') && submit">Date is required</div>
+        <div class="error" *ngIf="dataError">Invalid date !</div>
+
+      </div>
+      <div class="formGroup">
+        <label for="time">Time: </label>
+        <input type="time" placeholder="Enter Time" formControlName="Time" #input3>
+        <div class="error" *ngIf="Form.get('Time').hasError('required') && submit">Time is required</div>
+        <div class="error" *ngIf="TimeError">Office entry time is 8:30 to 9:30. Please enter valid time</div>
+
+
+      </div>
+    </form>
+    <div class="button">
+      <button class="btn" (click)="formValue(Form.value)">Submit</button>
+    </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="body">
+  <div class="navbar">
+      <div class="navItem"  [ngStyle]="{'textDecoration': (form===true) ? 'underline' : 'none'}">Form</div>
+      <div class="navItem"  [ngStyle]="{'textDecoration': (camera===true) ? 'underline' : 'none'}">Camera</div>
+      <div class="navItem"  [ngStyle]="{'textDecoration': (clock===true) ? 'underline' : 'none'}">Clock</div>
+      <div class="navItem" routerLink="/data"  [ngStyle]="{'textDecoration': (data===true) ? 'underline' : 'none'}">Data</div>
+  </div>
+</div>

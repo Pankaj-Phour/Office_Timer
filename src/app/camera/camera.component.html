@@ -1,0 +1,16 @@
+<div class="body">
+  <div class="container">
+    <h2>Click a picture of yourself to verify your identity</h2>
+    <div class="video">
+      <video autoplay height="300" width="300" #video [ngStyle]="{'display': picture ? 'none' : 'flex'}"></video>
+      <canvas  height="300" width="300" #canvas [ngStyle]="{'display':  'none'}"></canvas>
+      <img [src]="image" height="270" width="290"  *ngIf="picture" style="display: flex;background-color:white;object-fit: contain;">
+    </div>
+      <div class="buttonGroup">
+        <button type="button" class="btn" (click)="Capture()" *ngIf="!picture">Capture</button>
+        <button type="button" class="btn" (click)="recap()" *ngIf="picture">Re-Capture</button>
+        <button type="button" class="btn" [disabled]="!picture" routerLink="/clock">Next</button>
+      </div>
+    
+  </div>
+</div>
